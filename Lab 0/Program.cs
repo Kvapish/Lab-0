@@ -11,17 +11,19 @@ namespace Lab_0
         /// <summary>
         /// 8. Реализовать функцию вычисления частного двух вещественных чисел
         /// </summary>
-        /// <param name="x">Делимое</param>
-        /// <param name="y">Делитель</param>
+        /// <param name="first_number">Делимое</param>
+        /// <param name="second_number">Делитель</param>
         /// <returns>Вовзращает частное двух вещественных чисел </returns>
-        static double Divide(double x, double y)
+        static double Divide(double first_number, double second_number)
         {
-            return x / y;
+            return first_number / second_number;
         }
+
         static void Main(string[] args)
         {
             double result;
             Random GenerateRandomDouble = new Random();
+
             double dividend = GenerateRandomDouble.NextDouble() * 20.0 - 10.0;
             double divisor = GenerateRandomDouble.NextDouble() * 20.0 - 10.0;
 
@@ -39,13 +41,13 @@ namespace Lab_0
                     Console.WriteLine($"Результат: {formattedResult}");
                     break;
                 }
-
                 else
                 {
                     Console.WriteLine("Деление на ноль! Повторите ввод.");
+                    divisor = GenerateRandomDouble.NextDouble() * 20.0 - 10.0;
                 }
+            } while (true);
 
-            }while (true);
             Console.ReadLine();
         }
     }
